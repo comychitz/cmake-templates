@@ -1,14 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(Template-Cmake)
+project(Template)
 
-# build source
-file(GLOB_RECURSE sources src/*.cpp src/*.h)
-add_executable(Template-Cmake ${sources})
-
-# unit tests using cxxtest
 enable_testing()
-file(GLOB_RECURSE test_sources src/test/*.h)
-add_executable(unit_test ${test_sources})
-add_test(unit_tests unit_test)
+
+set(COMMON_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/src/common")
+
+# add sub directories
+add_subdirectory(src/common)
+add_subdirectory(src/exe)
 

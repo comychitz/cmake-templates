@@ -4,13 +4,13 @@
 class Incrementer 
 {
   public:
-    Incrementer() : val_(0) {  }
+    Incrementer();
 
-    ~Incrementer() {  }
+    ~Incrementer();
 
-    void inc() { val_++; }
+    void inc();
 
-    int val() { return val_; }
+    int val();
 
   private:
     int val_;
