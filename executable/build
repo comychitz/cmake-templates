@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BUILD_DIR="./tmp"
+
+if [ "$1" = "clean" ]; then
+    rm -rf "${BUILD_DIR}"
+    exit $?
+fi
+
+# do "out-of-source" build
+if ! mkdir -p "${BUILD_DIR}"; then
+    exit 1
+fi
+(cd ${BUILD_DIR} && cmake .. && make)
+exit $?
